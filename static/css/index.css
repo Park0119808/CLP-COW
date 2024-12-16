@@ -1,0 +1,69 @@
+/* index.css - Styles for the main page */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Header styling */
+header {
+  background-color: #0056a3;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8em;
+}
+
+header .user-info {
+  display: flex;
+  align-items: center;
+}
+
+header .user-info span {
+  margin-right: 10px;
+  font-size: 1em;
+}
+
+header .user-info button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+header .user-info button:hover {
+  background-color: #ff1a1a;
+}
+
+/* Main content styling */
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+main h2 {
+  font-size: 1.6em;
+  color: #0056a3;
+}
+
+main p {
+  font-size: 1.1em;
+  margin-top: 10px;
+  line-height: 1.6;
+}

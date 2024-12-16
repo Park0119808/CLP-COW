@@ -1,0 +1,155 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+.header {
+  text-align: center;
+  padding: 20px;
+  background-color: #4caf50;
+  color: white;
+}
+
+.main-content {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.cow-list {
+  width: 80%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cow-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cow-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cow-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  margin-right: 15px;
+  border: 2px solid #ddd;
+}
+
+.cow-info {
+  flex-grow: 1;
+}
+
+.cow-info h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.infection-status {
+  width: 80px;
+  text-align: center;
+  border-radius: 4px;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.infection-status.infected {
+  background-color: #f44336;
+  color: white;
+}
+
+.infection-status.healthy {
+  background-color: #4caf50;
+  color: white;
+}
+
+.cow-item.infected {
+  border-color: #f44336;
+}
+
+.cow-item.healthy {
+  border-color: #4caf50;
+}
+
+/* Notification Icon */
+.notification-icon {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.notification-icon .bell-icon {
+  font-size: 24px;
+}
+
+.notification-icon .notification-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 14px;
+}
+
+/* Notification Popup */
+.notification-popup {
+  position: fixed;
+  top: 50px;
+  right: 20px;
+  width: 300px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  z-index: 1000;
+}
+
+.notification-popup h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.notification-popup ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notification-popup ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.notification-popup #close-notification-popup {
+  display: block;
+  margin: 10px auto 0;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

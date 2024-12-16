@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcam Capture</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        video {
+            border: 2px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Webcam Capture</h1>
+    <video id="webcam" autoplay playsinline></video>
+    <button id="capture-btn">Capture</button>
+    <canvas id="canvas" style="display: none;"></canvas>
+
+    <script src="/static/js/webcam.js"></script>
+</body>
+
+</html>

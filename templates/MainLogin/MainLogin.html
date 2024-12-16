@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인</title>
+  <link rel="stylesheet" href="/static/css/MainLogin.css">
+</head>
+
+<body>
+  <div class="login-container">
+    <h1>로그인</h1>
+    <form id="loginForm">
+      <!-- 아이디와 비밀번호 입력 필드 -->
+      <input type="text" id="id" name="id" placeholder="아이디" required>
+      <input type="password" id="password" name="password" placeholder="비밀번호" required>
+      <button type="submit">로그인</button>
+    </form>
+
+    <!-- 회원가입 링크 -->
+    <p>아직 계정이 없으신가요? <a href="/MainLogin/SignUp.html">회원가입</a></p>
+
+    <!-- 오류 메시지 표시 -->
+    <div id="error-message" style="color: red; margin-top: 10px;"></div>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", async (event) => {
+      event.preventDefault(); // 폼 기본 동작 막기
+
+      // 폼 데이터 가져오기
+      const id = document.getElementById("id").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      // ID와 비밀번호 입력 확인
+      if (!id || !password) {
+        document.getElementById("error-message").textContent = "아이디와 비밀번호를 입력해주세요.";
+        return;
+      }
+
+      try {
+        // 서버에 로그인 요청
+        const response = await fetch("/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ id, password }),
+        });
+
+        if (response.ok) {
+          // 로그인 성공 시 메인 페이지로 이동
+          window.location.href = "/MainPage";
+        } else {
+          // 로그인 실패 시 서버에서 전달된 메시지 표시
+          const data = await response.json();
+          document.getElementById("error-message").textContent = data.message || "로그인 실패";
+        }
+      } catch (error) {
+        // 서버 오류 발생 시 메시지 표시
+        document.getElementById("error-message").textContent = "서버에 문제가 발생했습니다.";
+      }
+    });
+  </script>
+</body>
+
+</html>
